@@ -13,7 +13,11 @@ Vagrant.configure(2) do |config|
 
     server.vm.provision 'chef_solo' do |chef|
       chef.add_recipe 'chef_server'
-      chef.add_recipe 'chef_server::nodes_ip'
+      # chef.add_recipe 'chef_server::nodes_ip'
+    end
+
+    server.vm.provider 'virtualbox' do |v|
+      v.gui = false
     end
   end
 

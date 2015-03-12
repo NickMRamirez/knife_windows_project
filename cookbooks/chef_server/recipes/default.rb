@@ -63,11 +63,5 @@ directory "#{home_chef_dir}/cookbooks"
 
 # Install the knife-windows gem
 # package 'build-essential'
-# package 'libxml2'
-# chef_gem 'nokogiri' do
-#   compile_time false
-#   options '-- --use-system-libraries=true --with-xml2-include=/usr/include/libxml2'
-# end
-chef_gem 'knife-windows' do
-  compile_time false
-end
+# package 'zlib1g'
+# chef_gem 'knife-windows'
