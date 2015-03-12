@@ -62,6 +62,10 @@ end
 directory "#{home_chef_dir}/cookbooks"
 
 # Install the knife-windows gem
-# package 'build-essential'
-# package 'zlib1g'
-# chef_gem 'knife-windows'
+apt_package 'build-essential' do
+  notifies :run, 'execute[install-knife-windows]', :immediately
+end
+execute 'install-knife-windows' do
+  command '/opt/chef/embedded/bin/gem install knife-windows'
+  action :nothing
+end
